@@ -10,10 +10,33 @@ class Stack:
 
   def push(self, data) -> None:
     # Write your code here
+        node = Node(x)
+        if node is None:
+            print('Heap Overflow')
+            return
+        node.data = x
+        node.next = self.top
+        self.top = node
+        self.nodesCount += 1
+    def isEmpty(self):
+        return self.top is None
+    def peek(self):
+        if not self.isEmpty():
+            return self.top.data
+        else:
+            print('The stack is empty')
+            exit(-1)
 
   def pop(self) -> None:
     # Write your code here
-
+    if self.top is None:
+            print('Stack Underflow')
+            exit(-1)
+    top = self.top.data
+    self.top = self.top.next
+     self.nodesCount -= 1
+ 
+        return top
   def status(self):
     """
     It prints all the elements of stack.
