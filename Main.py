@@ -31,12 +31,17 @@ class Stack:
     It prints all the elements of stack.
     """
     # Write your code here  
-    while True:
-    print('push <value>')
-    print('pop')
-    print('quit')
-    do = input('What would you like to do? ').split()
-
+      iternode = self.head
+        if self.isempty():
+            print("Stack Underflow")
+        
+        else:
+            
+            while(iternode != None):
+                
+                print(iternode.data,"->",end = " ")
+                iternode = iternode.next
+            return
 
 # Do not change the following code
 stack = Stack()
