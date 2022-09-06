@@ -9,39 +9,24 @@ class Stack:
     self.head = None
 
   def push(self, data) -> None:
-    # Write your code here
-        if self.head is None:
-            self.head = Node(data)
-        else:
-            new_node = Node(data)
-            new_node.next = self.head
-            self.head = new_node
+    nn = Node(data)
+    nn.next = self.head
+    self.head = nn
 
   def pop(self) -> None:
-    # Write your code here
-     if self.head is None:
-            return None
-        else:
-            popped = self.head.data
-            self.head = self.head.next
-            return popped
-
+    if(self.head!=None):
+      temp = self.head
+      self.head = temp.next
   def status(self):
-    """
-    It prints all the elements of stack.
-    """
-    # Write your code here  
-      iternode = self.head
-        if self.isempty():
-            print("Stack Underflow")
-        
-        else:
-            
-            while(iternode != None):
-                
-                print(iternode.data,"->",end = " ")
-                iternode = iternode.next
-            return
+    if(self.head  != None):
+      temp = self.head
+      while temp.next!= None:
+        print(temp.data, end = "")
+        print("=>", end = "")
+        temp = temp.next
+      print(temp.data, end = "=>")
+      
+    print("None")
 
 # Do not change the following code
 stack = Stack()
